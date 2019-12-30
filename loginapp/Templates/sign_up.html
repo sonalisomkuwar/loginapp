@@ -1,0 +1,33 @@
+{% load static%}
+<link rel="stylesheet" 
+type="text/css" 
+href= {% static "a.css" %}/>
+<h1>Sign Up </h1>
+
+Pease fill in this form to create an account.
+
+<form action="/signup/" method="POST"><br> <br>
+{% csrf_token %}
+
+<input type ="text" placeholder="Enter User Name" name = "uname" required/><br><br>
+
+<input type ="text" placeholder="Enter Email Id" name = "emid" /> <br> <br>
+
+
+
+<input type="password" name="psw" placeholder="Enter Password"/><br><br>
+                         
+ <input type="password" name="pass" placeholder="Confirm Password"/><br><br>                                  
+
+
+
+<input type="checkbox"> I accept the terms of use and privacy policy.<br><br>
+
+
+<input type="submit" value="Submit"/>
+<input type="button" value="Go back!" onclick="history.back()">
+
+
+<br><br>
+</form>
+

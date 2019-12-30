@@ -1,0 +1,35 @@
+
+
+<form id="abcd" method="POST"><br> <br>
+{% csrf_token %} 
+
+
+  
+<h1> Login Members </h1>
+	{% for member in members %}
+	<li><b> <input type="radio" name="id"  value={{member.id}}></b>
+				User Name :{{member.user_name}}&nbsp&nbsp
+				Password  :{{member.password}}<br><br>
+	
+		{% endfor %}
+
+		
+<button onclick="DeleteEmp()">Delete</button>
+<button onclick="UpdateEmp()">Update</button>
+<button onclick="Suspend()">Suspend</button>
+<input type="button" value="Go back!" onclick="history.back()">	
+</form>		
+
+	<script>
+		function DeleteEmp()
+		{
+			document.getElementById("abcd").action ="/delete/";
+			<!-- action we can take this path from urle delete -->
+		}
+		
+		function UpdateEmp()
+		{
+			document.getElementById("abcd").action ="/update/";
+			<!-- action we can take this path from url update -->
+		}
+	</script>
